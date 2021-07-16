@@ -1,0 +1,1198 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: "Raleway-regular";
+  src: url(../fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-medium";
+  src: url(../fonts/Raleway-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-bold";
+  src: url(../fonts/Raleway-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-semibold";
+  src: url(../fonts/Raleway-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-bolder";
+  src: url(../fonts/Raleway-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-light";
+  src: url(../fonts/Raleway-Light.ttf);
+}
+
+@font-face {
+  font-family: "Raleway-black";
+  src: url(../fonts/Raleway-Black.ttf);
+}
+
+:root {
+  --primary: #eebf00;
+  --secondary: #232b38;
+  --ternary: #6c6c6c;
+  --danger: #fe4545;
+  --pure: #fefefe;
+  --light: #f0f0f0;
+  --heaven: #ffffff;
+  --footer: #2d333f;
+}
+
+body {
+  font-family: "Raleway-regular";
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1152px;
+  }
+}
+
+/***********************************************************/
+
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.main-container .site-nav-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  z-index: 1;
+  background-color: var(--light);
+}
+
+.main-container .site-nav-container .site-links,
+.main-container .site-nav-container > img {
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+
+.main-container .site-nav-container .site-links > ul {
+  list-style-type: none;
+  padding-bottom: 1rem;
+}
+
+.main-container .site-nav-container .site-links > ul li {
+  margin-bottom: 0.5rem;
+}
+
+.main-container .site-nav-container .site-links > ul li a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: "Raleway-semibold";
+}
+
+.main-container .site-nav-container .site-links > ul li a:hover {
+  color: var(--primary);
+}
+
+.main-container .site-main-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  overflow-y: scroll;
+  transition: all 0.4s ease;
+  background-color: var(--pure);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.site-main-container.side-slide {
+  transform: translateX(85%) scale(0.9);
+}
+
+.main-container .site-main-container .hamburger-icon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.main-container .site-main-container .hamburger-icon img {
+  height: 2rem;
+  cursor: pointer;
+  display: none;
+}
+
+/***********************************************************/
+
+.padding-b {
+  padding-bottom: 1rem;
+}
+
+.padding-l {
+  padding-left: 0.75rem;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.btn {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.75rem 0.75rem;
+  font-family: "Raleway-semibold";
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--pure);
+}
+
+.btn-primary:hover {
+  background-color: var(--pure);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--pure);
+}
+
+.btn-secondary:hover {
+  background-color: var(--pure);
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/***********************************************/
+.header {
+  color: var(--light);
+  font-family: "Raleway-semibold";
+  font-size: 0.75rem;
+  background-color: var(--secondary);
+}
+
+.header .top-bar {
+  margin: 0 auto;
+  padding: 0.5rem 0.25rem;
+}
+
+.header .top-bar .header-left a {
+  text-decoration: none;
+  margin-right: 0.75rem;
+}
+
+.header .top-bar .header-right span {
+  margin: 0 1rem;
+}
+
+.header .top-bar .header-right div a {
+  color: var(--light);
+  text-decoration: none;
+}
+
+.header .top-bar .header-right div a img {
+  margin-right: 0.4rem;
+}
+
+/**********************************************************/
+
+.mid-bar .mid-top {
+  padding-top: 1rem;
+}
+
+.mid-bar .mid-bar-left img,
+.mid-bar .mid-bar-right img {
+  height: 1.75rem;
+  margin-right: 0.5rem;
+}
+
+.mid-bar .mid-bar-left .contact h5,
+.mid-bar .mid-bar-right .timing h5 {
+  color: var(--secondary);
+  font-size: 0.8rem;
+  font-family: "Raleway-bold";
+  margin-bottom: 0.25rem;
+}
+
+.mid-bar .mid-bar-left .contact h6,
+.mid-bar .mid-bar-right .timing h6 {
+  color: var(--ternary);
+  font-size: 0.75rem;
+  font-family: "Raleway-light";
+  letter-spacing: 0.055rem;
+}
+
+.mid-bar .nav-bar {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.mid-bar .nav-bar .container {
+  padding: 0.75rem 0;
+}
+
+.mid-bar .nav-bar .container a {
+  border: 1px solid transparent;
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: var(--secondary);
+  transition: all 0.2s ease;
+  font-family: "Raleway-semibold";
+}
+
+.mid-bar .nav-bar .container a.active {
+  background-color: var(--primary);
+  color: var(--pure);
+}
+
+.mid-bar .nav-bar .container a:hover {
+  background-color: var(--primary);
+  color: var(--pure);
+}
+
+/****************************************************/
+.magic-shadow {
+  position: relative;
+  background-color: var(--pure);
+}
+
+.magic-shadow::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2.8rem;
+  position: absolute;
+  border: none;
+  bottom: -9px;
+  z-index: -1;
+  background-image: url(../icons/shadow.svg);
+  background-position: center;
+}
+
+.shadow-sm {
+  position: relative;
+}
+
+.shadow-sm::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2.8rem;
+  position: absolute;
+  border: none;
+  left: -2px;
+  bottom: -15px;
+  z-index: -1;
+  background-image: url(../icons/shadow-sm.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/****************************************************/
+
+/****************************************/
+.hero-header {
+  padding: 5rem 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../images/hero.png");
+}
+
+.hero-header .hero-content {
+  position: relative;
+}
+
+.hero-header .hero-content .welcome-logo img {
+  height: 1.8rem;
+  margin-left: 0.7rem;
+}
+
+.hero-header .hero-content .welcome-logo h4 {
+  font-size: 0.8rem;
+  font-family: "Raleway-bold";
+}
+
+.hero-header .hero-bold-header h1 {
+  margin: 0.5rem 0 0.5rem 0;
+  font-family: "Raleway-bolder";
+}
+
+.hero-header .hero-bold-header h1 span {
+  color: var(--primary);
+}
+
+.hero-header .hero-bold-header p {
+  font-family: "Raleway-medium";
+  font-size: 0.8rem;
+  margin-bottom: 0.8rem;
+  width: 65%;
+}
+
+.hero-header .hero-content .hero-heaer-btns button {
+  font-size: 1rem;
+}
+
+.hero-header .hero-img {
+  position: absolute;
+  height: 175px;
+  right: 15.62rem;
+  top: 17.87rem;
+}
+
+.top-products {
+  padding: 3rem 0;
+  background-color: var(--light);
+}
+
+/*****************************************/
+.magic-shadow-sm {
+  position: relative;
+  margin-bottom: 4.5rem;
+  z-index: 1;
+}
+
+.magic-shadow-sm::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2.8rem;
+  position: absolute;
+  border: none;
+  bottom: -3rem;
+  z-index: -1;
+  background-image: url(../icons/hr.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*****************************************/
+
+.top-products > .product-heading h1 {
+  font-family: "Raleway-medium";
+}
+
+.top-products .product-heading .underline-bar {
+  margin-top: 0.25rem;
+  height: 1rem;
+}
+
+/************************************************/
+
+.top-products .food-slider .food-card {
+  background-color: var(--heaven);
+  padding: 1.25rem 0;
+}
+
+.top-products .food-slider .food-card hr {
+  width: 100%;
+  border-color: var(--light);
+  opacity: 0.3;
+}
+
+.top-products .food-slider .food-card > img.card-img {
+  height: 200px;
+  width: 80%;
+  padding-bottom: 1rem;
+  object-fit: contain;
+}
+
+.top-products .food-slider .food-card > h3 {
+  font-family: "Raleway-bold";
+  letter-spacing: 0.5px;
+  margin: 0.75rem 0 0.5rem 0;
+}
+
+.top-products .food-slider .food-card .star-rating {
+  margin-bottom: 0.5rem;
+}
+
+.top-products .food-slider .food-card .star-rating img {
+  height: 0.9rem;
+  margin-right: 0.25rem;
+}
+
+.top-products .food-slider .food-card .food-price {
+  color: var(--danger);
+  font-family: "Raleway-medium";
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.top-products .food-slider .food-card .add-cart {
+  width: 50%;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 0 !important;
+  color: var(--secondary);
+  letter-spacing: 0.05rem;
+  transition: all 0.3s ease;
+  font-family: "Raleway-semibold";
+  background-color: var(--heaven);
+  border: 1px solid var(--primary);
+}
+
+.top-products .food-slider .food-card .add-cart > img {
+  height: 2rem;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  background-color: var(--primary);
+}
+
+.top-products .food-slider .food-card .add-cart:hover {
+  background-color: var(--primary);
+  color: var(--heaven);
+}
+
+/************* slider bug modification **************/
+.slick-slide {
+  margin: 0 1.2rem;
+}
+
+.slick-list {
+  margin: 0 -1.2rem;
+}
+
+.slick-track {
+  padding: 1rem 0;
+}
+/*****************************************************/
+
+.top-products .slider {
+  position: relative;
+}
+
+.top-products .slider .scroll-btn {
+  position: absolute;
+  height: 1.87rem;
+  width: 1.87rem;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  z-index: 1;
+  border-radius: 3px;
+  background-color: var(--primary);
+}
+
+.top-products .slider .prev-btn {
+  top: 40%;
+  left: 3%;
+}
+
+.top-products .slider .next-btn {
+  top: 40%;
+  right: 3%;
+}
+
+.top-products .view-more {
+  margin-top: 2rem;
+}
+
+.top-products .view-more button {
+  font-size: 0.9rem;
+}
+
+/*******************************************************************/
+.flex-1 {
+  flex: 1;
+}
+section.about-meal {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+section.about-meal .about-meal-head h1 {
+  font-family: "Raleway-medium";
+}
+
+section.about-meal .yogurt-wrapper .yogurt-img {
+  text-align: right;
+  margin-right: 3rem;
+}
+
+section.about-meal .yogurt-wrapper .yogurt-img img {
+  height: 15.625rem;
+}
+
+section.about-meal .yogurt-wrapper .yogurt-info .info .info-head {
+  font-size: 1.25rem;
+  font-family: "Raleway-semibold";
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+section.about-meal .yogurt-wrapper .yogurt-info .info .info-detail {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+/*******************************************************/
+section.card-show {
+  position: relative;
+  z-index: 0;
+  padding: 2.5rem 0;
+  background-color: var(--light);
+}
+
+section.card-show .card-head {
+  font-family: "Raleway-medium";
+}
+
+section.card-show .card-wrapper .card:not(:last-child) {
+  margin-right: 2rem;
+}
+
+section.card-show .card-wrapper .card {
+  text-align: center;
+  margin-top: 3.5rem;
+  position: relative;
+  padding: 3.5rem 2rem 2rem 2rem;
+  background-color: var(--heaven);
+}
+
+section.card-show .card-wrapper .card-mid h4 {
+  color: var(--primary);
+}
+
+section.card-show .card-wrapper .card img {
+  position: absolute;
+  top: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section.card-show .card-wrapper .card h4 {
+  font-family: "Raleway-semibold";
+  margin-bottom: 1rem;
+}
+
+section.card-show .card-wrapper .card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+/****************************************************************/
+section.deal-timer {
+  padding: 2.5rem 0 4rem 0;
+  background: linear-gradient(rgba(35, 43, 56, 0.9), rgba(35, 43, 56, 0.9)),
+    url(../images/food-table.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+section.deal-timer .deal-head {
+  font-family: "Raleway-medium";
+  margin-bottom: 5rem;
+  color: var(--pure);
+}
+
+section.deal-timer .timer-wrapper div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 2.5rem;
+  border-radius: 5px;
+  background-color: var(--primary);
+}
+
+section.deal-timer .timer-wrapper div span:first-child {
+  font-size: 2.5rem;
+  font-family: "Raleway-medium";
+  margin-bottom: 0.15rem;
+  color: var(--pure);
+}
+
+section.deal-timer .timer-wrapper div span:last-child {
+  color: var(--pure);
+  font-weight: 500;
+}
+
+section.deal-timer .timer-wrapper div:not(:last-child) {
+  margin-right: 3rem;
+}
+
+/************************************************************************/
+section.blog {
+  position: relative;
+  z-index: 0;
+  padding: 2.5rem;
+  background-color: var(--light);
+}
+
+section.blog .blog-btn {
+  margin-top: 2rem;
+}
+
+section.blog .blog-head {
+  font-family: "Raleway-medium";
+}
+
+section.blog .blog-wrapper .blog-card:not(:last-child) {
+  margin-right: 2rem;
+}
+
+section.blog .blog-wrapper .blog-card {
+  background-color: var(--pure);
+  width: 23rem;
+}
+
+section.blog .blog-wrapper .blog-card .card-info {
+  padding: 1rem;
+}
+
+section.blog .blog-wrapper .blog-card > img {
+  height: 16rem;
+}
+
+section.blog .blog-wrapper .blog-card .card-info .card-info-time {
+  margin-bottom: 1rem;
+}
+
+section.blog .blog-wrapper .blog-card .card-info .card-info-time .time,
+section.blog .blog-wrapper .blog-card .card-info .card-info-time .comment {
+  font-size: 0.7rem;
+  font-family: "Raleway-medium";
+}
+
+section.blog
+  .blog-wrapper
+  .blog-card
+  .card-info
+  .card-info-time
+  .comment
+  p:first-child {
+  margin-right: 1rem;
+}
+
+section.blog
+  .blog-wrapper
+  .blog-card
+  .card-info
+  .card-info-time
+  .comment
+  p:first-child
+  span {
+  font-family: "Raleway-bold";
+  color: var(--ternary);
+}
+
+section.blog .blog-wrapper .blog-card .card-detail > h3 {
+  font-size: 1rem;
+  font-family: "Raleway-bold";
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+section.blog .blog-wrapper .blog-card .card-detail > p {
+  font-size: 0.75rem;
+  font-family: "Raleway-medium";
+  line-height: 1.6;
+}
+
+/***************************************************************/
+
+section.subscribe {
+  padding: 2.5rem;
+  background-color: var(--primary);
+}
+
+section.subscribe .wrapper-subscribe .rasberry-img {
+  text-align: right;
+  margin-right: 5rem;
+}
+
+section.subscribe .wrapper-subscribe .rasberry-img > img {
+  width: 90%;
+}
+
+section.subscribe .wrapper-subscribe .subscribe-detail > h1 {
+  font-size: 1.3rem;
+  font-family: "Raleway-bold";
+  margin-bottom: 1.5rem;
+}
+
+section.subscribe .wrapper-subscribe .subscribe-detail > p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  font-family: "Raleway-medium";
+  margin-bottom: 1rem;
+}
+
+section.subscribe .wrapper-subscribe .subscribe-detail .btn-container {
+  padding: 0.25rem;
+  background-color: var(--pure);
+}
+
+section.subscribe .wrapper-subscribe .subscribe-detail .btn-container > input {
+  border: none;
+  outline: none;
+  padding-left: 5px;
+}
+
+section.subscribe .wrapper-subscribe .subscribe-detail .btn-container > button {
+  flex: 0.25;
+}
+
+/***************************************************************************/
+section.contact .contact-us {
+  padding: 2.5rem 0;
+}
+
+section.contact .contact-us .contact-head {
+  margin-bottom: 5rem;
+}
+
+section.contact .contact-us .contact-wrapper .contact-info {
+  margin-bottom: 1.5rem;
+}
+
+section.contact .contact-us .contact-wrapper .contact-info > img {
+  margin-right: 1rem;
+}
+
+section.contact .contact-us .contact-wrapper .contact-info .info-title > h3 {
+  font-size: 0.9rem;
+  font-family: "Raleway-medium";
+  margin-bottom: 0.5rem;
+}
+
+section.contact .contact-us .contact-wrapper .contact-info .info-title > p {
+  font-size: 0.9rem;
+  font-family: "Raleway-medium";
+}
+
+section.contact .contact-map > iframe {
+  height: 100%;
+  width: 100%;
+  filter: grayscale(100%);
+  border: none;
+}
+
+/*******************************************************************************/
+
+footer {
+  background-color: var(--footer);
+  padding: 3rem 0 0 0;
+}
+
+footer .copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  letter-spacing: 0.3px;
+  padding: 0.5rem;
+  color: var(--pure);
+  font-size: 0.65rem;
+  font-family: "Raleway-medium";
+  background-color: var(--secondary);
+}
+
+footer .copyright a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+footer .wrapper h4 {
+  color: var(--pure);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--primary);
+}
+
+footer .wrapper div {
+  flex: 1;
+}
+
+footer .wrapper div.about > p {
+  color: var(--pure);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+footer .wrapper div:not(:last-child) {
+  margin-right: 3rem;
+}
+
+footer .wrapper .quick-links > ul,
+footer .wrapper .follow-us .link-wrapper > ul {
+  list-style-type: none;
+}
+
+footer .wrapper .quick-links > ul > li a,
+footer .wrapper .follow-us .link-wrapper > ul > li a {
+  text-decoration: none;
+  color: var(--pure);
+  font-size: 0.85rem;
+}
+
+footer .wrapper .quick-links > ul > li a:hover,
+footer .wrapper .follow-us .link-wrapper > ul > li a:hover {
+  color: var(--primary);
+}
+
+footer .wrapper .quick-links > ul > li,
+footer .wrapper .follow-us > ul > li {
+  margin-bottom: 1rem;
+}
+
+footer .wrapper div.follow-us .link-wrapper {
+  display: inline-block;
+  text-align: left;
+}
+
+footer .wrapper div.follow-us .link-wrapper > ul > li {
+  margin-bottom: 1rem;
+}
+
+footer .wrapper div.follow-us .link-wrapper > ul > li > img {
+  margin-right: 0.75rem;
+}
+
+footer .wrapper div.instagram .insta-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .wrapper div.instagram .insta-wrapper img {
+  height: 100%;
+  width: calc(1 / 3 * 100% - (1-1 / 3) * 0.62rem);
+  margin-bottom: 0.62rem;
+}
+
+/****************************************( Responsive design )***************************************/
+
+@media (max-width: 992px) {
+  .main-container .site-main-container .hamburger-icon img {
+    display: block;
+  }
+
+  .main-container .site-main-container .header,
+  .main-container .site-main-container .mid-bar {
+    display: none;
+  }
+
+  .main-container .site-main-container .hero-header .hero-img {
+    top: 35%;
+    left: 70%;
+  }
+
+  .top-products .slider .scroll-btn {
+    display: none !important;
+  }
+
+  .top-products .slider .food-slider .food-card .add-cart {
+    width: 45%;
+  }
+
+  footer .wrapper div.instagram .insta-wrapper img {
+    width: calc(1 / 2 * 100% - (1-1 / 2) * 0.62rem);
+    margin-bottom: 0.62rem;
+  }
+}
+
+/*---------------------------------------------------------------------*/
+
+@media (max-width: 768px) {
+  .hero-header {
+    padding-left: 3rem;
+    margin-top: -3rem;
+  }
+
+  .main-container .site-main-container .hamburger-icon > img.menu-bar {
+    height: 1.75rem;
+  }
+
+  .main-container .site-main-container .hero-header .hero-img {
+    height: 150px;
+    top: 35%;
+    left: 70%;
+  }
+
+  .hero-header .hero-content .welcome-logo img {
+    height: 1.3rem;
+  }
+
+  .hero-header .hero-content .hero-bold-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .hero-header .hero-content .hero-bold-header p {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .hero-header .hero-content .hero-heaer-btns button {
+    width: 20%;
+    height: 2.8rem;
+  }
+
+  .top-products .slider .food-slider .food-card .add-cart {
+    width: 35%;
+  }
+
+  section.about-meal .yogurt-wrapper {
+    flex-direction: column;
+  }
+
+  section.about-meal .yogurt-wrapper .yogurt-img {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  section.about-meal .yogurt-wrapper .yogurt-info .info .info-head,
+  section.about-meal .yogurt-wrapper .yogurt-info .info .info-detail {
+    font-family: "Raleway-medium";
+  }
+
+  section.about-meal .yogurt-wrapper .yogurt-info {
+    position: relative;
+    padding-bottom: 4rem;
+  }
+
+  section.about-meal .yogurt-wrapper .yogurt-info button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  section.card-show .card-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section.card-show .card-wrapper .card:not(:last-child) {
+    margin-left: 2rem;
+  }
+
+  section.card-show .card-wrapper .card {
+    width: 70%;
+    z-index: 0;
+  }
+
+  section.deal-timer .timer-wrapper div {
+    padding: 1.25rem 1.75rem;
+  }
+
+  section.deal-timer .timer-wrapper div:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+
+  section.deal-timer .timer-wrapper div span:first-child {
+    font-size: 1.5rem;
+  }
+
+  section.blog .blog-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section.blog .blog-wrapper .blog-card {
+    z-index: 0;
+  }
+
+  section.blog .blog-wrapper .blog-card:first-child {
+    margin-left: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  footer .wrapper div.instagram {
+    margin-bottom: 3rem;
+  }
+
+  .shadow-sm::after {
+    bottom: -16px;
+  }
+}
+
+/*---------------------------------------------------------------------*/
+@media (max-width: 576px) {
+  .main-container .site-main-container .hamburger-icon > img.menu-bar {
+    height: 1.5rem;
+  }
+
+  .hero-header {
+    padding-left: 3rem;
+    margin-top: -2.75rem;
+  }
+
+  .main-container .site-main-container .hero-header .hero-img {
+    height: 110px;
+    top: 15%;
+    left: 70%;
+  }
+
+  .hero-header .hero-content .hero-bold-header h1 {
+    font-size: 1.25rem;
+  }
+
+  .hero-header .hero-content .hero-bold-header p {
+    font: 0.4rem;
+  }
+
+  .hero-header .hero-content .hero-heaer-btns button {
+    width: 20%;
+    line-height: 1.5;
+    font-family: "Raleway-bold";
+    padding: 0.6rem !important;
+    font-size: 0.6rem;
+  }
+
+  .top-products .slider .food-slider .food-card img.card-img {
+    height: 150px;
+  }
+
+  section.about-meal .yogurt-wrapper .yogurt-img {
+    margin: 0 auto;
+    padding-bottom: 1.5rem;
+  }
+
+  section.about-meal .yogurt-wrapper .yogurt-img img {
+    height: 180px;
+  }
+
+  section.about-meal .yogurt-wrapper .yogurt-info {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  section.deal-timer .timer-wrapper div {
+    padding: 1rem 0.25rem;
+  }
+
+  section.deal-timer .timer-wrapper div:not(:last-child) {
+    margin-right: 0.8rem;
+  }
+
+  section.deal-timer .timer-wrapper div span:first-child {
+    font-size: 1.25rem;
+  }
+
+  section.deal-timer .timer-wrapper div span:last-child {
+    font-size: 0.65rem;
+    letter-spacing: 0.75px;
+  }
+
+  section.blog .blog-wrapper .blog-card > img {
+    height: 10rem;
+    object-fit: cover;
+  }
+
+  section.subscribe .wrapper-subscribe .rasberry-img {
+    display: none;
+  }
+
+  section.contact {
+    flex-direction: column;
+  }
+
+  footer .wrapper {
+    flex-direction: column;
+  }
+
+  .shadow-sm::after {
+    left: 1px;
+  }
+
+  footer .wrapper .about,
+  footer .wrapper .quick-links,
+  footer .wrapper .follow-us {
+    padding-left: 2.5rem;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+
+  footer .wrapper .instagram h4 {
+    width: 90%;
+  }
+  footer .wrapper div.instagram .insta-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  footer .wrapper div.instagram .insta-wrapper img {
+    width: 180px;
+    margin-left: -2rem;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  footer .wrapper .instagram {
+    text-align: left;
+    padding-left: 2.5rem;
+  }
+}
